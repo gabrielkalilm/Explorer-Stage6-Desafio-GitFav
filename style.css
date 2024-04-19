@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62,5%;
+  font-family: "Roboto", sans-serif;
+  --bg-color: hsl(0, 0%, 0%);
+  --text-color: hsl(240, 9%, 89%);
+  --text-search-button-color: hsl(0, 0%, 100%);
+  --text-search-button-hover-color: hsl(195, 91%, 25%);
+  --bg-search-button-color: hsl(195, 91%, 25%);
+  --bg-search-button-hover-color: hsl(0, 0%, 100%);
+  --bg-input-color: hsl(191, 65%, 7%);
+  --text-input-color: hsl(240, 6%, 51%);
+  --text-remove-button-color: hsl(355, 91%, 66%);
+  --bg-header-row-color: hsl(194, 72%, 13%);
+  --bg-odd-row-color: hsla(194, 64%, 6%, 0.5);
+  --bg-even-row-color: hsl(190, 66%, 7%);
+  --table-border-color: hsl(191, 31%, 42%);
+  --bg-foot-color: hsl(192, 63%, 3%);
+  --text-foot-color: hsl(189, 4%, 32%);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  max-width: 112rem;
+  margin: 11.5rem auto;
+  display: grid;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8.7rem;
+}
+
+.search-wrapper {
+  display: flex;
+  gap: .8rem;
+}
+
+nav input {
+  padding: 1.6rem;
+  width: 46.2rem;
+  border: none;
+  border-radius: .5rem;
+  outline-color: var(--table-border-color);
+}
+
+nav input,
+nav input::placeholder {
+  color: var(--text-input-color);
+  background: var(--bg-input-color);
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+}
+
+#search-button{
+  display: flex;
+  border: none;
+  border-radius: .5rem;
+  padding: 1.2rem 3.2rem;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 2.4rem; 
+  text-transform: uppercase;
+
+  cursor: pointer;
+  }
+
+#search-button, 
+#search-button svg path {
+fill: var(--text-search-button-color);
+color: var(--text-search-button-color);
+background: var(--bg-search-button-color);
+}
+
+#search-button:hover,
+#search-button:hover svg path {
+fill: var(--text-search-button-hover-color);
+color: var(--text-search-button-hover-color);
+background: var(--bg-search-button-hover-color);
+}
+
+table {
+  border-radius: 1.2rem;
+  border: 1px solid var(--table-border-color);
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  overflow: hidden;
+}
+
+thead{
+  background-color: var(--bg-header-row-color);
+}
+
+thead th {
+  padding: 1.6rem 2.4rem 1.6rem 4rem;
+  text-align: left;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+.user a {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  text-decoration: none;
+  color: var(--text-color);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  line-height: 160%;
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--bg-odd-row-color);
+}
+
+table tr:nth-child(even) td {
+  background-color: var(--bg-even-row-color);
+  border-block: 1px solid var(--table-border-color);
+}
+
+table tr:last-child td:first-child{
+  border-bottom-left-radius: 1.2rem;
+    
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+
+#none-row{
+  background-color: var(--bg-even-row-color);
+}
+
+td {
+  padding: 2.4rem 2.4rem 2.4rem 4rem;
+  color: var(--text-color);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  text-align: left;
+}
+
+.removeButton {
+  color: var(--text-remove-button-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; 
+}
+
+
+
+#none-row{
+  background: var(--bg-foot-color);
+  text-align: center;
+  vertical-align: middle;
+  height: 62.4rem;
+}
+
+.bigStar-wrapper {
+  margin: 21rem 15rem 29rem 19rem;
+  display: flex;
+  align-items: center;
+  place-content: center;
+}
+
+#none-row img {
+  width: 13.2rem;
+  height: 12.5rem;
+  margin-right: 6rem;
+}
+
+#none-row span {
+  color: var(--text-foot-color);
+  font-size: 4rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+.hidden {
+  display: none;
+}
